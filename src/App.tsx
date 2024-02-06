@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+// @ts-ignore
 import QrReader from 'react-qr-scanner'
 
 export default function App() {
@@ -16,12 +17,12 @@ export default function App() {
     <>
       {data === 'No result' ? (
         <QrReader
-          onScan={(capturedData) => {
+          onScan={(capturedData: any) => {
             setData(capturedData?.text ?? 'No result')
             console.info(capturedData?.text ? `Captured id ${capturedData.text}` : 'No result')
           }}
-          onError={(err) => {
-            console.error(err)
+          onError={(error: any) => {
+            console.error(error)
           }}
           delay={1000}
         />
