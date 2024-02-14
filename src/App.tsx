@@ -25,6 +25,7 @@ export default function App() {
             console.error(error)
           }}
           delay={1000}
+          facingMode='rear'
         />
       ) : (selectedEmployee ? (
         <table>
